@@ -8,7 +8,7 @@ import DashboardPage from './components/pages/DashboardPage';
 import SignupPage from './components/pages/SignupPage';
 import ForgotPasswordPage from "./components/pages/ForgotPasswordPage";
 import ResetPasswordPage from "./components/pages/ResetPasswordPage";
-
+import NewBookPage from "./components/pages/NewBookPage";
 import ConfirmationPage from "./components/pages/ConfirmationPage";
 import UserRoute from "./components/routes/UserRoute";
 import GuestRoute from "./components/routes/GuestRoute";
@@ -38,7 +38,12 @@ const App = ({location, isAuthenticated}) =>
       exact
       component={ConfirmationPage}
     />
-    
+    <UserRoute
+      location={location}
+      path="/books/new"
+      exact
+      component={NewBookPage}
+    />
     <UserRoute 
       location={location} 
       path="/dashboard" 
