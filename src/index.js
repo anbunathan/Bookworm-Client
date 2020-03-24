@@ -12,6 +12,7 @@ import { userLoggedIn } from "./actions/auth";
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import "semantic-ui-css/semantic.min.css";
+import setAuthorizationHeader from "./utils/setAuthorizationHeader";
 
 const store = createStore(
     rootReducer,
@@ -25,7 +26,7 @@ const store = createStore(
       email: payload.email,
       confirmed: payload.confirmed
     };
-    
+    setAuthorizationHeader(localStorage.bookwormJWT);
     store.dispatch(userLoggedIn(user));
   }
 
